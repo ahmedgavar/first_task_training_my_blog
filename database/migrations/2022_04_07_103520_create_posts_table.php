@@ -21,6 +21,10 @@ return new class extends Migration
             $table->string('created_by');
             $table->string('field');
             $table->string('content');
+            $table->string('img_name');
+            $table->string('img_path');
+
+
 
 
             $table->timestamps();

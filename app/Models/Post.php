@@ -12,13 +12,16 @@ class Post extends Model
         'created_by',
         'field',
         'content',
+        'user_id',
+        'img_name',
+        
     ];
 
     public function user(){
-        return $this->belongsTo(User::class,'user_id');
+        return $this->belongsTo(User::class);
     }
     public function comment(){
-        return $this->hasMany(Post::class,'post_id');
+        return $this->hasMany(Post::class);
     }
 
 

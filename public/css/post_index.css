@@ -1,0 +1,51 @@
+#link_to_create{
+    height: 80px;
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 50px;
+   
+    }
+    #link_to_create>a{
+        text-decoration: none;
+        background-color: brown;
+        color: white;
+        padding: 10px;
+
+
+    }
+    #operations{
+        text-align: center;
+    }
+    th{
+        font-size: xx-large;
+    }
+    td>a{
+        text-decoration: none;
+        font-size: larger;
+        color: wheat;
+        /* background-color: blueviolet; */
+        padding: 10px;
+    }
+    td #view{
+        background-color: rgb(37, 175, 37);
+    }
+    td #edit{
+        background-color: rgb(23, 0, 128);
+    }
+    td #comment{
+        background-color: dodgerblue;
+    }
+     td #delete{
+        background-color: rgb(128, 0, 0);
+    }
+    img,svg{
+        width: 30px;
+        display: inline-block;
+        margin-left: 40px;
+        margin-right: 40px;
+
+        
+    }
+    tr{
+        padding: 20px;
+    }

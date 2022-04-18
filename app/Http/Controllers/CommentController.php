@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCommentRequest;
+use App\Http\Requests\StorePostRequest;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 use App\Models\Post;
@@ -17,7 +19,6 @@ class CommentController extends Controller
     public function index()
     {
         //
-        return 100*9;
         
     }
 
@@ -29,6 +30,10 @@ class CommentController extends Controller
     public function create()
     {
         //
+        // $post=Post::find($id);
+       
+        return view('comments.create');
+
     }
 
     /**
@@ -37,9 +42,23 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCommentRequest $request)
     {
         //
+
+        $comment=Comment::create([
+            
+            'content'=>$request->content,
+            
+            'user_id'=>$request->user()->id,
+            'post_id'=>1
+            
+            
+        ]);
+
+
+        // $post->save();
+        return redirect()->route('posts.index');
     }
 
     /**

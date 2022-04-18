@@ -1,0 +1,48 @@
+h1{
+    color:red;
+    
+}
+#title{
+  margin-left: 40%;
+  width: 50%;
+  padding: 10px;
+}
+.form_div{
+    display: flex;
+    flex-basis: 20% 80%;
+}
+
+
+div>label {
+    width: 15%;
+    font-size: x-large;
+    margin-left: 1%;
+}
+[name="field"]{
+    width: 80%;
+    margin-left: 16%;
+    border: 2px solid #abc300;
+    margin-bottom: 30px;
+
+}
+#save_post{
+    margin-left: 50%;
+    width: 80px;
+    height: 50px;
+    font-size: x-large;
+}
+
+.error_messages{
+
+    text-align: center;
+}
+body{
+    width: 70%;
+}
+#ckeditor{
+    height: 200px;
+    width: 1000px;
+    
+}
+#post_content{
+margin-left: 10%;}
