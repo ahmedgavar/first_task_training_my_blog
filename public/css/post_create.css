@@ -46,3 +46,10 @@ body{
 }
 #post_content{
 margin-left: 10%;}
+
+textarea { 
+    /* will prevent resizing horizontally */
+    resize:vertical;
+ }
+
+ 

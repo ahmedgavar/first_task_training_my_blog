@@ -87,10 +87,8 @@ class PostController extends Controller
         //
         $my_post=Post::find($post);
         $comments = Comment::where('post_id', $post)->get();
+        //  only the owner of post can edit
         
-
-        
-    
          return view('posts.show',['my_post'=>$my_post,'comments'=>$comments]);
 
     }
@@ -104,6 +102,8 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         //
+        
+        
 
     }
 

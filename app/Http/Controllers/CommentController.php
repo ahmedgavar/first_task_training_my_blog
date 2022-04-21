@@ -81,6 +81,14 @@ class CommentController extends Controller
     public function edit(Comment $comment)
     {
         //
+        $comment_creator=$comment->user_id;
+
+
+        $user = auth()->user()->id;
+
+        
+        return view('comments.edit',['comment'=>$comment,'user'=>$user]);
+        
     }
 
     /**
@@ -90,9 +98,17 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comment $comment)
+    public function update(StoreCommentRequest $request, Comment $comment)
     {
         //
+        $comment->content=$request->content;
+        $comment->user_id=$request->user()->id;
+        $comment-> post_id =1;
+        $comment->update();
+        return redirect()->route('posts.show', ['post' => $comment->post_id])->with('status','data is updated succefully');
+
+
+
     }
 
     /**

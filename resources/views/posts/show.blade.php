@@ -16,6 +16,7 @@
         <input type="text" name="field"  readonly
          class="form-control"  aria-describedby="basic-addon1"
         value="{{$my_post->field}}">
+
      
      
         
@@ -24,13 +25,12 @@
         
     <div class="form-floating form_div">
         <label for="content">Content</label>
+        <input type="text" name="content"  readonly
+         class="form-control"  aria-describedby="basic-addon1"
+        value="{!!$my_post->content!!}">
 
-        <textarea class="form-control" id="content" name="content" 
-            readonly style="height: 200px;font-size: x-large;">
-    
-                {{$my_post->content}}
 
-        </textarea>
+
           
     </div>
     
@@ -41,14 +41,24 @@
   <h2>
         Comments
     </h2>
-    <!-- <a  id="view" href="{{route('comments.create')}}">Add comment </a>  -->
 
     @foreach($comments as $comment)
+    <textarea class="form-control" col="40" row="10" id="editor" name="content" 
+             style="font-size: x-large;">
+    
+                {!!$comment->content!!}
 
-    <input type="text" name="field"  readonly
-         class="form-control"  aria-describedby="basic-addon1"
-        value="{{$comment->content}}">
+        </textarea>
+
+
         <span>{{$comment->user->name}}</span>
+        <span>
+        <a  id="view" href="{{route('comments.edit',['comment'=>$comment->id])}}">edit </a> 
+    </span>
+        <span><a href="">delete</a></span>
+
+
+
 
         @endforeach
 
@@ -57,3 +67,13 @@
       
 @endsection('form')
 
+@section('ckeditor')
+<script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+
+@endsection ('ckeditor')  
