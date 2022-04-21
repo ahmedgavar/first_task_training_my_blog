@@ -44,7 +44,7 @@
           </td>
 
           <td >
-            <a id="edit" href="#"> edit</a> 
+            <a id="edit" href="#" onclick="x"> edit</a> 
           </td> 
           
           <td>
@@ -62,3 +62,19 @@
 </table>
 {{$posts->render()}}
 @endsection ('table')
+ <?php
+ echo '<script type="text/javascript">
+  function x(){
+    let text;
+    var d=confirm ("Are you sure to delete ?");
+    if(d==true){
+      text="yyyyyyyyyyyyy";
+    }
+    else{
+      text="nnnnnnnnnn";
+    }
+    return text;
+
+  }
+</script>';
+?>
